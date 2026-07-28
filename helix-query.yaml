@@ -8,6 +8,15 @@ indices:
       - '/**.json'
     target: /query-index.json
     properties:
+      image:
+        select: head > meta[ property="og:image"]
+        value: match(attribute(el, "content"), "https:W[^/]+(/ .* )")
+      title:
+        select: head > meta[name=title]
+        value: attribute(el, "title")
+      description:
+        select: head > meta[name=description]
+        value: attribute(el, "description")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
