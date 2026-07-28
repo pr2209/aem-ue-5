@@ -9,14 +9,14 @@ indices:
     target: /query-index.json
     properties:
       image:
-        select: head > meta[ property="og:image"]
-        value: match(attribute(el, "content"), "https:W[^/]+(/ .* )")
+        select: head > meta[property="og:image"]
+        value: match(attribute(el, "content"), "https:\/\/[^/]+(/.*)")
       title:
-        select: head > meta[name=title]
+        select: head > meta[property=og:title]
         value: attribute(el, "title")
       description:
         select: head > meta[name=description]
-        value: attribute(el, "description")
+        value: attribute(el, "content")
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
