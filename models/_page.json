@@ -29,22 +29,6 @@
           "name": "cq:tags",
           "valueType": "string",
           "rootPath": "/content/cq:tags/wknd-shared"
-        },
-        {
-          "id": "image",
-          "fields": [
-            {
-              "component": "reference",
-              "name": "image",
-              "label": "Image",
-              "multi": false
-            },
-            {
-              "component": "text",
-              "name": "imageAlt",
-              "label": "Alt Text"
-            }
-          ]
         }
       ]
     }
