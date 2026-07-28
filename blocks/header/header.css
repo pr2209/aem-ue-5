@@ -270,3 +270,44 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+header .header.block nav {
+  /* Set the height of the logo image.
+     Chrome natively sets the width based on the images aspect ratio */
+  .nav-brand img {
+    height: calc(var(--nav-height) * .75);
+    width: auto;
+    margin-top: 5px;
+  }
+  
+  .nav-sections {
+    /* Update menu items display properties */
+    a {
+      text-transform: uppercase;
+      background-color: transparent;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: var(--body-font-size-s);
+    
+      &:hover {
+        background-color: inherit;
+      }
+    }
+
+    /* Adjust some spacing and positioning of the dropdown nav */
+    .nav-drop {      
+      &::after {
+        transform: translateY(-50%) rotate(135deg);
+      }
+      
+      &[aria-expanded='true']::after {
+        transform: translateY(50%) rotate(-45deg);
+      }
+
+      & > ul {
+        top: 2rem;
+        left: -1rem;      
+       }  
+    }
+  }
+}
