@@ -31,11 +31,16 @@
           "rootPath": "/content/cq:tags/wknd-shared"
         },
         {
-          "component": "reference",
+          "component": "group",
           "name": "image",
-          "label": "Featured Image",
-          "multi": false,
-          "description": "Featured/social image for this page. Sets the og:image meta tag."
+          "label": "Image",
+          "fields": [
+            {
+              "component": "reference",
+              "name": "fileReference",
+              "label": "Image"
+            }
+          ]
         },
         {
           "component": "text",
