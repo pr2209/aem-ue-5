@@ -40,6 +40,26 @@
           "component": "aem-content",
           "name": "testContent",
           "label": "Test content"
+        },
+        {
+          "component": "text",
+          "valueType": "date",
+          "name": "publishdate",
+          "label": "Publish Date",
+          "description": "Article publish date (YYYY-MM-DD). Sets the publishdate meta tag and the query-index published date."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "categorytitle",
+          "label": "Category Title",
+          "description": "Category/eyebrow label. Sets the categorytitle meta tag and the query-index category."
+        },
+        {
+          "component": "aem-content",
+          "name": "categoryurl",
+          "label": "Category URL",
+          "description": "Category page this article belongs to. Sets the categoryurl meta tag and the query-index categoryUrl."
         }
       ]
     }
