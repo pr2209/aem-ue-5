@@ -34,6 +34,11 @@
         "valueType": "string",
         "name": "testField",
         "label": "Test Field"
+      },
+      {
+        "component": "aem-content",
+        "name": "testContent",
+        "label": "Test content"
       }
     ]
   },
