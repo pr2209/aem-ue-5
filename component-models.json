@@ -28,6 +28,12 @@
         "name": "cq:tags",
         "valueType": "string",
         "rootPath": "/content/cq:tags/wknd-shared"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "testField",
+        "label": "Test Field"
       }
     ]
   },
