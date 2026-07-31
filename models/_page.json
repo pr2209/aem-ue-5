@@ -31,15 +31,11 @@
           "rootPath": "/content/cq:tags/wknd-shared"
         },
         {
-          "component": "text",
-          "valueType": "string",
-          "name": "testField",
-          "label": "Test Field"
-        },
-        {
-          "component": "aem-content",
-          "name": "testContent",
-          "label": "Test content"
+          "component": "reference",
+          "name": "image",
+          "label": "Featured Image",
+          "multi": false,
+          "description": "Featured/social image for this page. Sets the og:image meta tag."
         },
         {
           "component": "text",
