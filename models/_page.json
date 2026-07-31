@@ -32,7 +32,7 @@
         },
         {
           "component": "reference",
-          "name": "image/fileReference",
+          "name": "teaser/image/fileReference",
           "label": "Featured Image",
           "multi": false,
           "description": "Featured/social image for this page. Sets the og:image meta tag."
