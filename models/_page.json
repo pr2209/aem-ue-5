@@ -32,7 +32,7 @@
         },
         {
           "component": "reference",
-          "name": "testImage",
+          "name": "testImage/image",
           "label": "Featured Image",
           "multi": false,
           "description": "Featured/social image for this page. Sets the og:image meta tag."
