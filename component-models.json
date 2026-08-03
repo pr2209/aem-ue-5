@@ -35,6 +35,7 @@
         "label": "Featured Image",
         "valueType": "string",
         "value": "",
+        "description": "Test Image Description",
         "multi": false
       },
       {
