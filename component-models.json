@@ -30,13 +30,17 @@
         "rootPath": "/content/cq:tags/wknd-shared"
       },
       {
-        "component": "reference",
-        "name": "teaser/image/fileReference",
-        "label": "Featured Image",
-        "valueType": "string",
-        "value": "",
-        "description": "Test Image Description",
-        "multi": false
+        "component": "container",
+        "name": "teaser",
+        "label": "Teaser",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Featured Image",
+            "valueType": "string"
+          }
+        ]
       },
       {
         "component": "text",
