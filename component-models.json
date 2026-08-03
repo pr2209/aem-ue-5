@@ -31,10 +31,11 @@
       },
       {
         "component": "reference",
-        "name": "testImage/image",
+        "name": "teaser/image/fileReference",
         "label": "Featured Image",
-        "multi": false,
-        "description": "Featured/social image for this page. Sets the og:image meta tag."
+        "valueType": "string",
+        "value": "",
+        "multi": false
       },
       {
         "component": "text",
