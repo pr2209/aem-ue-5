@@ -19,6 +19,6 @@ module.exports = {
     'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
     'xwalk/invalid-field-name': 'off',
-    'xwalk/max-cells': ['error', { 'article-header': 6, }]
+    'xwalk/max-cells': ['error', { 'article-header': 6 }],
   },
 };
