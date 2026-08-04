@@ -33,28 +33,18 @@ function resolveWidths(layout, columnCount) {
 }
 
 async function loadNestedBlocks(columns) {
-  const nestedBlocks = [];
-
-  columns.forEach((column) => {
-    column.querySelectorAll('div').forEach((el) => {
-      if (
-        el.dataset.blockStatus
-        || el.classList.contains('grid-column')
-        || el.classList.contains('row')
-      ) {
-        return;
-      }
-
-      // A block has a data-block-name after decoration or already contains the
-      // standard "block" class.
-      if (el.dataset.blockName || el.classList.contains('block')) {
-        nestedBlocks.push(el);
-      }
-    });
-  });
+  const nestedBlocks = columns.flatMap((column) => [
+    ...column.querySelectorAll('[data-aue-component]:not([data-block-status])'),
+  ]);
 
   await Promise.all(
     nestedBlocks.map(async (block) => {
+      // Skip if already decorated
+      if (block.dataset.blockStatus) {
+        return;
+      }
+
+      // Wrap the block so EDS creates the expected wrapper structure
       const wrapper = document.createElement('div');
       block.replaceWith(wrapper);
       wrapper.append(block);
