@@ -1,16 +1,16 @@
 {
   "definitions": [
     {
-      "title": "Column Control",
-      "id": "column-control",
+      "title": "Columns",
+      "id": "columns",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "name": "Column Control",
-              "model": "column-control",
-              "filter": "column-control",
+              "name": "Columns",
+              "model": "columns",
+              "filter": "columns",
               "columns": "2",
               "rows": "1"
             }
@@ -36,7 +36,7 @@
   ],
   "models": [
     {
-      "id": "column-control",
+      "id": "columns",
       "fields": [
         {
           "component": "select",
@@ -90,7 +90,7 @@
   ],
   "filters": [
     {
-      "id": "column-control",
+      "id": "columns",
       "components": [
         "column"
       ]

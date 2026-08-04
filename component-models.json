@@ -253,7 +253,7 @@
     ]
   },
   {
-    "id": "column-control",
+    "id": "columns",
     "fields": [
       {
         "component": "select",
