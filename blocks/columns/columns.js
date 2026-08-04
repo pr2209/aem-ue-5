@@ -37,11 +37,32 @@ async function loadNestedBlocks(columns) {
     ...column.querySelectorAll('[data-aue-component]:not([data-block-status])'),
   ]);
 
+  console.log('Nested blocks found:', nestedBlocks.length);
+
   await Promise.all(
     nestedBlocks.map(async (block) => {
-      console.log('Loading nested block:', block.dataset.aueComponent);
+      console.log('==============================');
+      console.log('Before decorate');
+      console.log({
+        element: block,
+        className: block.className,
+        firstClass: block.classList[0],
+        component: block.dataset.aueComponent,
+        blockName: block.dataset.blockName,
+        blockStatus: block.dataset.blockStatus,
+      });
 
       decorateBlock(block);
+
+      console.log('After decorate');
+      console.log({
+        className: block.className,
+        firstClass: block.classList[0],
+        component: block.dataset.aueComponent,
+        blockName: block.dataset.blockName,
+        blockStatus: block.dataset.blockStatus,
+      });
+
       await loadBlock(block);
     }),
   );
