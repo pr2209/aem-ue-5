@@ -34,6 +34,16 @@
     ]
   },
   {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "article-header"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
