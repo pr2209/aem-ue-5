@@ -1,0 +1,62 @@
+/* Column Control — self-contained Bootstrap-style 12-column grid.
+   The block emits `.row` on the cell wrapper and `.col-lg-N` on each column
+   (assigned by column-control.js). Styling is entirely local — no external
+   Bootstrap dependency.
+
+   Note on specificity: media queries do NOT add specificity, so the tablet and
+   desktop overrides must match the base selector's specificity. Every rule below
+   uses the `.column-control .grid-column...` shape for that reason. */
+
+.column-control.row,
+.column-control .row {
+  --grid-gap: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+/* Each column stacks its own content. */
+.column-control .grid-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}
+
+.column-control .grid-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile-first: every column is full width and stacks. */
+.column-control .grid-column[class*="col-lg-"] {
+  grid-column: span 12;
+}
+
+/* Tablet: two columns per row where the layout allows. */
+@media (width >= 768px) and (width < 992px) {
+  .column-control .grid-column[class*="col-lg-"] {
+    grid-column: span 6;
+  }
+}
+
+/* Desktop (>= 992px, Bootstrap lg): honor the configured 12-unit spans.
+   Selectors combine `.grid-column` + `.col-lg-N` to match the mobile-first
+   rule's specificity so these overrides take effect. */
+@media (width >= 992px) {
+  .column-control .grid-column.col-lg-1 { grid-column: span 1; }
+  .column-control .grid-column.col-lg-2 { grid-column: span 2; }
+  .column-control .grid-column.col-lg-3 { grid-column: span 3; }
+  .column-control .grid-column.col-lg-4 { grid-column: span 4; }
+  .column-control .grid-column.col-lg-5 { grid-column: span 5; }
+  .column-control .grid-column.col-lg-6 { grid-column: span 6; }
+  .column-control .grid-column.col-lg-7 { grid-column: span 7; }
+  .column-control .grid-column.col-lg-8 { grid-column: span 8; }
+  .column-control .grid-column.col-lg-9 { grid-column: span 9; }
+  .column-control .grid-column.col-lg-10 { grid-column: span 10; }
+  .column-control .grid-column.col-lg-11 { grid-column: span 11; }
+  .column-control .grid-column.col-lg-12 { grid-column: span 12; }
+}

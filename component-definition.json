@@ -113,6 +113,39 @@
           }
         },
         {
+          "title": "Column Control",
+          "id": "column-control",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Column Control",
+                  "model": "column-control",
+                  "filter": "column-control",
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Column",
+          "id": "column",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/column",
+                "template": {
+                  "name": "Column",
+                  "model": "column"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "plugins": {

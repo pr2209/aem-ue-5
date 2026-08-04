@@ -26,6 +26,12 @@
     ]
   },
   {
+    "id": "column-control",
+    "components": [
+      "column"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
