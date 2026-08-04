@@ -183,6 +183,57 @@
     ]
   },
   {
+    "id": "article-header",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow Text",
+        "description": "Optional. Leave blank to auto-derive from the parent category page title.",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "eyebrowLink",
+        "label": "Eyebrow Link",
+        "rootPath": "/content/about-ups-eds",
+        "validation": {
+          "rootPath": "/content/about-ups-eds"
+        },
+        "description": "Select the parent category page. The picker opens under /content/about-ups-eds."
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Article Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Short Description",
+        "value": ""
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "articleDate",
+        "label": "Article Date",
+        "displayFormat": "YYYY-MM-DD",
+        "valueFormat": "YYYY-MM-DD",
+        "description": "Select the article date."
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "hideReadTime",
+        "label": "Hide Read Time"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
