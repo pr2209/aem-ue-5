@@ -51,7 +51,9 @@
         "cards",
         "columns",
         "fragment",
-        "teaser"
+        "teaser",
+        "article-header",
+        "column-control"
       ]
     }
   ]
