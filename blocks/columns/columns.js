@@ -33,30 +33,13 @@ function resolveWidths(layout, columnCount) {
 }
 
 async function loadNestedBlocks(columns) {
-  const nestedBlocks = [];
-
-  columns.forEach((column) => {
-    // Only direct children of the column
-    [...column.children].forEach((child) => {
-      const component = child.dataset.aueComponent;
-
-      // Ignore non-blocks and already decorated blocks
-      if (!component || component === 'columns' || child.dataset.blockStatus) {
-        return;
-      }
-
-      nestedBlocks.push(child);
-    });
-  });
+  const nestedBlocks = columns.flatMap((column) => [
+    ...column.querySelectorAll('[data-aue-component]:not([data-block-status])'),
+  ]);
 
   await Promise.all(
     nestedBlocks.map(async (block) => {
       console.log('Loading nested block:', block.dataset.aueComponent);
-
-      // Wrap the block so EDS can create the wrapper classes
-      const wrapper = document.createElement('div');
-      block.replaceWith(wrapper);
-      wrapper.append(block);
 
       decorateBlock(block);
       await loadBlock(block);
