@@ -294,7 +294,7 @@ main .section.highlight {
   gap: 24px;
 }
 
-.section {
+main > .section {
   grid-column: span 12;
 }
 
