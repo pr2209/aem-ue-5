@@ -293,6 +293,9 @@ main .section-layout {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
 }
 
 main .section.section-width-1  { grid-column: span 1; }
