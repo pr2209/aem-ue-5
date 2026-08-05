@@ -110,21 +110,29 @@ export function decorateButtons(main) {
 }
 
 function applySectionLayouts(main) {
+  // Unwrap existing layout containers
+  main.querySelectorAll(':scope > .section-layout').forEach((wrapper) => {
+    wrapper.replaceWith(...wrapper.children);
+  });
+
   let wrapper = null;
 
   [...main.querySelectorAll(':scope > .section')].forEach((section) => {
+    // Remove previously added width classes
+    [...section.classList]
+      .filter((cls) => cls.startsWith('section-width-'))
+      .forEach((cls) => section.classList.remove(cls));
+
     const width = Number(section.dataset.sectionWidth);
 
-    // Normal section (no section-width)
-    if (Number.isNaN(width) || width < 1 || width > 12) {
+    // Default/full-width section
+    if (Number.isNaN(width) || width < 1 || width > 12 || width === 12) {
       wrapper = null;
       return;
     }
 
-    // Add width class
     section.classList.add(`section-width-${width}`);
 
-    // Create a wrapper if one doesn't exist
     if (!wrapper) {
       wrapper = document.createElement('div');
       wrapper.className = 'section-layout';
@@ -132,6 +140,25 @@ function applySectionLayouts(main) {
     }
 
     wrapper.append(section);
+  });
+}
+
+function observeSectionLayouts(main) {
+  let timeout;
+
+  const observer = new MutationObserver(() => {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      applySectionLayouts(main);
+    }, 100);
+  });
+
+  observer.observe(main, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-section-width'],
   });
 }
 
@@ -145,6 +172,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   applySectionLayouts(main);
+  observeSectionLayouts(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
