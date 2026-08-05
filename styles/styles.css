@@ -287,3 +287,26 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.section-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.section {
+  grid-column: span 12;
+}
+
+.section.section-width-1  { grid-column: span 1; }
+.section.section-width-2  { grid-column: span 2; }
+.section.section-width-3  { grid-column: span 3; }
+.section.section-width-4  { grid-column: span 4; }
+.section.section-width-5  { grid-column: span 5; }
+.section.section-width-6  { grid-column: span 6; }
+.section.section-width-7  { grid-column: span 7; }
+.section.section-width-8  { grid-column: span 8; }
+.section.section-width-9  { grid-column: span 9; }
+.section.section-width-10 { grid-column: span 10; }
+.section.section-width-11 { grid-column: span 11; }
+.section.section-width-12 { grid-column: span 12; }

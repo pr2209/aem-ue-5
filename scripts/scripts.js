@@ -109,6 +109,32 @@ export function decorateButtons(main) {
   });
 }
 
+function applySectionLayouts(main) {
+  let wrapper = null;
+
+  [...main.querySelectorAll(':scope > .section')].forEach((section) => {
+    const width = Number(section.dataset.sectionWidth);
+
+    // Normal section (no section-width)
+    if (Number.isNaN(width) || width < 1 || width > 12) {
+      wrapper = null;
+      return;
+    }
+
+    // Add width class
+    section.classList.add(`section-width-${width}`);
+
+    // Create a wrapper if one doesn't exist
+    if (!wrapper) {
+      wrapper = document.createElement('div');
+      wrapper.className = 'section-layout';
+      section.before(wrapper);
+    }
+
+    wrapper.append(section);
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -118,6 +144,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  applySectionLayouts(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
