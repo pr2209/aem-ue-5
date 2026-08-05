@@ -295,15 +295,15 @@ main .section-layout {
   gap: 24px;
 }
 
-main > .section.section-width-1  { grid-column: span 1; }
-main > .section.section-width-2  { grid-column: span 2; }
-main > .section.section-width-3  { grid-column: span 3; }
-main > .section.section-width-4  { grid-column: span 4; }
-main > .section.section-width-5  { grid-column: span 5; }
-main > .section.section-width-6  { grid-column: span 6; }
-main > .section.section-width-7  { grid-column: span 7; }
-main > .section.section-width-8  { grid-column: span 8; }
-main > .section.section-width-9  { grid-column: span 9; }
-main > .section.section-width-10 { grid-column: span 10; }
-main > .section.section-width-11 { grid-column: span 11; }
-main > .section.section-width-12 { grid-column: span 12; }
+main .section.section-width-1  { grid-column: span 1; }
+main .section.section-width-2  { grid-column: span 2; }
+main .section.section-width-3  { grid-column: span 3; }
+main .section.section-width-4  { grid-column: span 4; }
+main .section.section-width-5  { grid-column: span 5; }
+main .section.section-width-6  { grid-column: span 6; }
+main .section.section-width-7  { grid-column: span 7; }
+main .section.section-width-8  { grid-column: span 8; }
+main .section.section-width-9  { grid-column: span 9; }
+main .section.section-width-10 { grid-column: span 10; }
+main .section.section-width-11 { grid-column: span 11; }
+main .section.section-width-12 { grid-column: span 12; }
