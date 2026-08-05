@@ -1,62 +1,33 @@
-/* Column Control — self-contained Bootstrap-style 12-column grid.
-   The block emits `.row` on the cell wrapper and `.col-lg-N` on each column
-   (assigned by columns.js). Styling is entirely local — no external
-   Bootstrap dependency.
-
-   Note on specificity: media queries do NOT add specificity, so the tablet and
-   desktop overrides must match the base selector's specificity. Every rule below
-   uses the `.columns .grid-column...` shape for that reason. */
-
-.columns.row,
-.columns .row {
-  --grid-gap: 24px;
-
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--grid-gap);
-  align-items: start;
-}
-
-/* Each column stacks its own content. */
-.columns .grid-column {
-  min-width: 0;
+.columns > div {
   display: flex;
   flex-direction: column;
-  gap: var(--grid-gap);
 }
 
-.columns .grid-column img {
+.columns img {
   width: 100%;
-  height: auto;
+}
+
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
   display: block;
 }
 
-/* Mobile-first: every column is full width and stacks. */
-.columns .grid-column[class*="col-lg-"] {
-  grid-column: span 12;
-}
-
-/* Tablet: two columns per row where the layout allows. */
-@media (width >= 768px) and (width < 992px) {
-  .columns .grid-column[class*="col-lg-"] {
-    grid-column: span 6;
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
   }
-}
 
-/* Desktop (>= 992px, Bootstrap lg): honor the configured 12-unit spans.
-   Selectors combine `.grid-column` + `.col-lg-N` to match the mobile-first
-   rule's specificity so these overrides take effect. */
-@media (width >= 992px) {
-  .columns .grid-column.col-lg-1 { grid-column: span 1; }
-  .columns .grid-column.col-lg-2 { grid-column: span 2; }
-  .columns .grid-column.col-lg-3 { grid-column: span 3; }
-  .columns .grid-column.col-lg-4 { grid-column: span 4; }
-  .columns .grid-column.col-lg-5 { grid-column: span 5; }
-  .columns .grid-column.col-lg-6 { grid-column: span 6; }
-  .columns .grid-column.col-lg-7 { grid-column: span 7; }
-  .columns .grid-column.col-lg-8 { grid-column: span 8; }
-  .columns .grid-column.col-lg-9 { grid-column: span 9; }
-  .columns .grid-column.col-lg-10 { grid-column: span 10; }
-  .columns .grid-column.col-lg-11 { grid-column: span 11; }
-  .columns .grid-column.col-lg-12 { grid-column: span 12; }
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
 }
