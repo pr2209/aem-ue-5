@@ -143,24 +143,24 @@ function applySectionLayouts(main) {
   });
 }
 
-function observeSectionLayouts(main) {
-  let timeout;
+// function observeSectionLayouts(main) {
+//   let timeout;
 
-  const observer = new MutationObserver(() => {
-    clearTimeout(timeout);
+//   const observer = new MutationObserver(() => {
+//     clearTimeout(timeout);
 
-    timeout = setTimeout(() => {
-      applySectionLayouts(main);
-    }, 100);
-  });
+//     timeout = setTimeout(() => {
+//       applySectionLayouts(main);
+//     }, 100);
+//   });
 
-  observer.observe(main, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['data-section-width'],
-  });
-}
+//   observer.observe(main, {
+//     childList: true,
+//     subtree: true,
+//     attributes: true,
+//     attributeFilter: ['data-section-width'],
+//   });
+// }
 
 /**
  * Decorates the main element.
@@ -172,7 +172,6 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   applySectionLayouts(main);
-  observeSectionLayouts(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
